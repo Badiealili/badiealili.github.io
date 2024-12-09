@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap");
+@import "@flaticon/flaticon-uicons/css/bold/straight.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* Text styles */
+    input,
+    textarea,
+    label,
+    p,
+    span,
+    div,
+    button,
+    a {
+        @apply text-sm;
+    }
+    h1 {
+        @apply mb-6 mt-8 font-primary text-4xl font-extrabold md:text-4xl;
+    }
+
+    h2 {
+        @apply font-primary text-3xl font-bold md:text-3xl;
+    }
+
+    h3 {
+        @apply font-primary text-2xl font-bold md:text-2xl;
+    }
+
+    h4 {
+        @apply font-primary text-lg font-bold md:text-lg;
+    }
+
+    body {
+        @apply h-screen !overflow-x-hidden bg-neutral-50 font-primary text-sm md:text-base;
+    }
+
+    section,
+    footer {
+        @apply px-8 pb-24 pt-8 sm:px-16 md:px-24 lg:px-36;
+    }
+
+    header {
+        @apply pb-8 pt-8;
+    }
+
+    i {
+        @apply pointer-events-none;
+    }
+}
+
+@layer components {
+    .btn-primary-dark {
+        @apply mx-auto block h-fit w-fit rounded-full border border-primary-800 bg-primary-800 px-6 py-3 text-accent-100 transition-all duration-100 ease-in hover:bg-accent-100 hover:text-primary-800;
+    }
+    .btn-secondary-light {
+        @apply mx-auto block h-fit w-fit rounded-full border-2 border-accent-100 px-6 py-3 text-accent-100 transition-all duration-100 ease-in hover:bg-accent-100 hover:text-primary-800;
+    }
+    .form-label {
+        @apply font-medium text-primary-800;
+    }
+    .form-input {
+        @apply mt-1 w-full rounded-full border border-neutral-400 px-3 py-2 outline-none focus:border-none focus:outline-2 focus:outline-offset-0 focus:outline-primary-800;
+    }
+    .form-error {
+        @apply ml-3 text-[10px] text-orange-700;
+    }
+}
+
+@layer utilities {
+    .display {
+        @apply font-display text-6xl font-bold leading-[50px] text-primary-800 sm:text-7xl sm:leading-[60px] lg:text-8xl lg:leading-[80px];
+    }
+
+    .center-abs {
+        @apply absolute left-1/2 -translate-x-1/2;
+    }
+
+    .center-mx {
+        @apply mx-auto w-fit;
+    }
+
+    .multi-shadow {
+        box-shadow:
+            0 0 0 5px #bef264,
+            0 0 0 10px #a3e635;
+    }
+
+    .bg-grid {
+        background-attachment: fixed;
+        background-size: 40px 40px;
+        background-image: linear-gradient(
+                to right,
+                rgb(217 249 157) 1px,
+                transparent 1px
+            ),
+            linear-gradient(to bottom, rgb(217 249 157) 1px, transparent 1px);
+    }
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .display-image-container {
+        @apply z-50 fixed inset-0 cursor-pointer bg-neutral-950 flex justify-center items-center p-8;
+    }
+    .display-image-container > img {
+        @apply rounded-2xl max-h-full;
+    }
+}
+
+/* Swiper library customization */
+.swiper-slide {
+    width: auto !important;
+}
+
+.swiper {
+    @apply !overflow-visible;
+}
+
+.swiper-pagination {
+    @apply !-bottom-10;
+}
+
+.swiper-pagination-bullet {
+    @apply bg-neutral-400 opacity-100;
+}
+
+.swiper-pagination-bullet-active {
+    @apply !bg-primary-800;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    @apply !hidden !h-8 !w-8 !rounded-full !bg-primary-800 !text-accent-50 md:!flex;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    @apply !text-sm !font-extrabold;
+}
